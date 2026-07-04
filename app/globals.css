@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
+/* ===== Paleta Estudio SAO (fuente única de color) ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy-900: #0B1B30;
+  --navy-850: #0B2137;
+  --navy-800: #0C2340;
+  --navy-600: #123A63;
+  --wa-green: #25D366;
+  --green-text: #25812F;
+  --gold: #C9A24B;
+  --surface: #F4F7FB;
+  --surface-alt: #EAF1FB;
+  --border: #E6EBF2;
+  --ink: #2E3A48;
+
+  --font-serif: var(--font-newsreader), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ===== Reset + base (portado 1:1 del prototipo) ===== */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+p {
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ===== Animaciones del botón flotante de WhatsApp ===== */
+@keyframes saoPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes saoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
