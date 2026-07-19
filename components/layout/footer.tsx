@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Phone,
@@ -33,40 +34,25 @@ export function Footer() {
         <div style={{ flex: "1 1 280px", minWidth: 240 }}>
           <Link
             href="/"
+            aria-label="Estudio SAO — Inicio"
             style={{
-              display: "flex",
+              display: "inline-flex",
               alignItems: "center",
-              gap: 12,
               textDecoration: "none",
             }}
           >
-            <span
+            <Image
+              src="/logo-sao.png"
+              alt="Estudio SAO &amp; Asoc."
+              width={266}
+              height={69}
               style={{
-                width: 42,
-                height: 42,
-                borderRadius: 11,
-                background: "#123A63",
-                color: "#fff",
-                fontFamily: "var(--font-newsreader), serif",
-                fontWeight: 700,
-                fontSize: 18,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                height: 44,
+                width: "auto",
+                // Logo en negro sobre fondo oscuro → se invierte a blanco.
+                filter: "brightness(0) invert(1)",
               }}
-            >
-              SAO
-            </span>
-            <span
-              style={{
-                fontFamily: "var(--font-newsreader), serif",
-                fontWeight: 600,
-                fontSize: 19,
-                color: "#fff",
-              }}
-            >
-              Estudio SAO
-            </span>
+            />
           </Link>
           <p
             style={{

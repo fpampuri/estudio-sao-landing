@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -139,57 +140,21 @@ export function Header() {
       >
         <Link
           href="/"
+          aria-label="Estudio SAO — Inicio"
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 12,
             textDecoration: "none",
           }}
         >
-          <span
-            style={{
-              width: 44,
-              height: 44,
-              borderRadius: 11,
-              background: "#0C2340",
-              color: "#fff",
-              fontFamily: "var(--font-newsreader), serif",
-              fontWeight: 700,
-              fontSize: 19,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              letterSpacing: ".02em",
-              boxShadow: "0 4px 14px rgba(12,35,64,.25)",
-            }}
-          >
-            SAO
-          </span>
-          <span
-            style={{ display: "flex", flexDirection: "column", lineHeight: 1.1 }}
-          >
-            <span
-              style={{
-                fontFamily: "var(--font-newsreader), serif",
-                fontWeight: 600,
-                fontSize: 19,
-                color: "#0C2340",
-              }}
-            >
-              Estudio SAO
-            </span>
-            <span
-              style={{
-                fontSize: 11,
-                letterSpacing: ".14em",
-                textTransform: "uppercase",
-                color: "#8593A5",
-                fontWeight: 600,
-              }}
-            >
-              Abogados &amp; Asociados
-            </span>
-          </span>
+          <Image
+            src="/logo-sao.png"
+            alt="Estudio SAO &amp; Asoc."
+            width={266}
+            height={69}
+            priority
+            style={{ height: 46, width: "auto" }}
+          />
         </Link>
 
         {isDesktop && (
